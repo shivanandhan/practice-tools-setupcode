@@ -7,13 +7,6 @@ variable "tools" {
       instance_type = "t3.small"
       policy_list = []
     }
-
-    github-runner ={
-      port        = 80 # just a dummy port
-      volume_size = 20
-      instance_type = "t3.small"
-      policy_list = ["*"]
-    }
   }
 }
 
