@@ -13,8 +13,15 @@ provider "vault" {
 
 variable "vault_token"{}
 
+resource "vault_mount" "roboshop-dev" {
+  path        = "roboshop-dev"
+  type        = "kv"
+  options     = { version = "2" }
+  description = "Roboshop dev secrets"
+}
+
 resource "vault_generic_secret" "roboshop-dev" {
-  path = "roboshop-dev/frontend"
+  path = "${vault_mount.roboshop-dev.path}/frontend"
 
   data_json = <<EOT
 {
