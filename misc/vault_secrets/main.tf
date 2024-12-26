@@ -29,7 +29,7 @@ resource "vault_generic_secret" "roboshop-dev" {
   "cart_url":    "http://cart-dev.kndevops72.online/",
   "user_url":    "http://user-dev.kndevops72.online/",
   "shipping_url": "http://shipping-dev.kndevops72.online/",
-  "payment_url":  "http://payment-dev.kndevops72.online/",
+  "payment_url":  "http://payment-dev.kndevops72.online/"
 
 }
 EOT
