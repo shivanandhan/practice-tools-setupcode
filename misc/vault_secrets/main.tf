@@ -20,6 +20,24 @@ resource "vault_mount" "roboshop-dev" {
   description = "Roboshop dev secrets"
  }
 
+resource "vault_mount" "infra-secrets" {
+  path        = "infra-secrets"
+  type        = "kv"
+  options     = { version = "2" }
+  description = "All infra secrets"
+}
+
+resource "vault_generic_secret" "ssh" {
+  path = "${vault_mount.infra-secrets.path}/ssh"
+
+  data_json = <<EOT
+{
+ "username" : "ec2-user",
+ "password" : "DevOps321"
+}
+EOT
+}
+
 resource "vault_generic_secret" "frontend" {
   path = "${vault_mount.roboshop-dev.path}/frontend"
 
