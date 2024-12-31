@@ -82,7 +82,7 @@ resource "vault_generic_secret" "cart" {
   data_json = <<EOT
 {
 "REDIS_HOST": "redis-dev.kndevops72.online",
-"CATALOGUE_HOST": "catalogue-dev.kndevops72.online"
+"CATALOGUE_HOST": "catalogue-dev.kndevops72.online",
 "CATALOGUE_PORT": "8080"
 }
 EOT
