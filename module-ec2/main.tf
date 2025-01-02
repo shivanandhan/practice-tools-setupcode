@@ -35,13 +35,13 @@ resource "aws_instance" "instance" {
   root_block_device {
     volume_size = var.volume_size
   }
-#   instance_market_options {
-#     market_type = "spot"
-#     spot_options {
-#       instance_interruption_behavior = "stop"
-#       spot_instance_type = "persistent"
-#     }
-#   }
+  instance_market_options {
+    market_type = "spot"
+    spot_options {
+      instance_interruption_behavior = "stop"
+      spot_instance_type = "persistent"
+    }
+  }
 #   iam_instance_profile = length(var.policy_list)>0 ? aws_iam_instance_profile.instance_profile[0].name : null
 }
 
