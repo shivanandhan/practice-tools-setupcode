@@ -37,4 +37,16 @@
   become_user: github-runner
   args:
     chdir: /actions-runner
-#  ignore_errors: yes
+  ignore_errors: yes
+
+- name: copy service file
+  ansible.builtin.copy:
+    src: github-runner.service
+    dest: /etc/systemd/system/github-runner.service
+
+- name: start Runner service
+  ansible.builtin.systemd_service:
+    name: github-runner
+    daemon-reload: yes
+    enabled: yes
+    state: restarted

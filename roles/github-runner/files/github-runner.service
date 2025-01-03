@@ -1,0 +1,14 @@
+[Unit]
+Description=GitHub Actions Runner (shivanandhanOrg.ip-172-31-88-39)
+After=network.target
+
+[Service]
+ExecStart=/actions-runner/runsvc.sh
+User=github-runner
+WorkingDirectory=/actions-runner
+KillMode=process
+KillSignal=SIGTERM
+TimeoutStopSec=5min
+
+[Install]
+WantedBy=multi-user.target
