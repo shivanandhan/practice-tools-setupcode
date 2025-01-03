@@ -37,4 +37,4 @@
   become_user: github-runner
   args:
     chdir: /actions-runner
-  ignore_errors: yes
+#  ignore_errors: yes
