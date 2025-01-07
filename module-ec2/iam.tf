@@ -1,4 +1,5 @@
 resource "aws_iam_role" "role" {
+  count = length(var.policy_list) > 0 ? 1: 0
   name = "${var.tool_name}-role"
 
   assume_role_policy = <<EOF
