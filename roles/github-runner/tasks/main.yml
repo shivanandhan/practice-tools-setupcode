@@ -41,7 +41,7 @@
 
 - name: copy service file
   ansible.builtin.copy:
-    src: github-runner
+    src: github-runner.service
     dest: /etc/systemd/system/github-runner.service
 
 - name: start Runner service
