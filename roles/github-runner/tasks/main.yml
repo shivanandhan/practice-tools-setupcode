@@ -51,13 +51,13 @@
     enabled: yes
     state: restarted
 
-#- name: Copy terraform repo
-#  ansible.builtin.get_url:
-#    url: https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
-#    dest: /etc/yum.repos.d/hashicorp.repo
-#
-#- name: Install terraform
-#  ansible.builtin.dnf:
-#    name: terraform
-#    state: installed # installing to get terraform on github-runner
+- name: Copy terraform repo
+  ansible.builtin.get_url:
+    url: https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+    dest: /etc/yum.repos.d/hashicorp.repo
+
+- name: Install terraform
+  ansible.builtin.dnf:
+    name: terraform
+    state: installed # installing to get terraform on github-runner
 
