@@ -47,7 +47,17 @@ resource "vault_generic_secret" "frontend" {
   "cart_url":    "http://cart-dev.kndevops72.online:8080/",
   "user_url":    "http://user-dev.kndevops72.online:8080/",
   "shipping_url": "http://shipping-dev.kndevops72.online:8080/",
-  "payment_url":  "http://payment-dev.kndevops72.online:8080/"
+  "payment_url":  "http://payment-dev.kndevops72.online:8080/",
+  "CATALOGUE_HOST" : catalogue-dev.kndevops72.online,
+  "CATALOGUE_PORT" : 8080.
+  "USER_HOST" : user-dev.kndevops72.online,
+  "USER_PORT" : 8080,
+  "CART_HOST" :cart-dev.kndevops72.online,
+  "CART_PORT" : 8080,
+  "SHIPPING_HOST" : shipping-dev.kndevops72.online,
+  "SHIPPING_PORT" : 8080,
+  "PAYMENT_HOST" : payment-dev.kndevops72.online,
+  "PAYMENT_PORT" : 8080
 
  }
 EOT
